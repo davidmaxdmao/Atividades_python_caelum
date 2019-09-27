@@ -1,4 +1,6 @@
-class Conta:
+import abc
+
+class Conta(abc.ABC):
     #criação do atributo da conta
 
     _total_contas = 0
@@ -62,3 +64,25 @@ class Conta:
         print('numero: {} \nsaldo:{}'.format(self.numero, self.saldo))
 
 #OBS.: Não criei o método transfere_para(), solicitado na apostila.
+
+    def atualiza(self, taxa):
+        self._saldo += self._saldo * taxa
+
+class ContaCorrente(Conta):
+
+    def __init__(self, numero, titular, saldo, limite):
+        super().__init__(numero, titular, saldo, limite)
+
+    def atualiza(self, taxa):
+        self._saldo += self._saldo * (taxa * 2)
+
+    def deposita(self, valor):
+        self.saldo += (valor - 0.10)
+
+class ContaPoupanca(Conta):
+
+    def __init__(self,numero,titular,saldo,limite):
+        super().__init__(numero, titular, saldo, limite)
+
+    def atualiza(self, taxa):
+        self._saldo += self._saldo * (taxa * 3)
