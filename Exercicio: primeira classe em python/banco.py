@@ -16,7 +16,7 @@ class Banco:
         return self._contas
 
 # Esta classe foi criada para responder a questão 8 da atividade de herança
-# para poder testar é necessário executar um condigo python com os devidos
+# para poder testar é necessário executar um código python com os devidos
 # imports de conta, banco e atualizadorDeContas, instanciar algumas contas e um banco para testar,
 # como no seguinte códito:
 '''
