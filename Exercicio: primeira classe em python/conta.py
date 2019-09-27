@@ -65,6 +65,7 @@ class Conta(abc.ABC):
 
 #OBS.: Não criei o método transfere_para(), solicitado na apostila.
 
+    @abc.abstractmethod
     def atualiza(self, taxa):
         self._saldo += self._saldo * taxa
 
